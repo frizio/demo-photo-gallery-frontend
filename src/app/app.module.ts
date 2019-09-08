@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { PhotoFormComponent } from './components/photo-form/photo-form.component';
+import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    PhotoFormComponent
+    PhotoFormComponent,
+    PhotoPreviewComponent
   ],
   imports: [
     BrowserModule,
