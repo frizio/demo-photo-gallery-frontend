@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { PhotoFormComponent } from './components/photo-form/photo-form.component';
 import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.component';
+import { PhotoListComponent } from './components/photo-list/photo-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     PhotoFormComponent,
-    PhotoPreviewComponent
+    PhotoPreviewComponent,
+    PhotoListComponent
   ],
   imports: [
     BrowserModule,
