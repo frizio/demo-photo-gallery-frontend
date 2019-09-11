@@ -1,5 +1,5 @@
 <div class="row" *ngIf="!photo; else main_content">
-    <h1>Loading foto...</h1>
+    <h1>Caricamento della foto...</h1>
 </div>
 
 <ng-template #main_content>
@@ -9,5 +9,25 @@
                 <img [src]="'http://localhost:4000/' + photo.imagePath" alt="" class="img-fluid">
             </div>
         </div>
+        <div class="col-md-7">
+            <div class="card">
+                <form class="card-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" 
+                                placeholder="Titolo della foto" [value]="photo.title">
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="10" class="form-control"
+                                  placeholder="Descrizione della foto" [value]="photo.description"></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-block">
+                        Update
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
+    <button class="btn btn-danger">
+        Delete
+    </button>
 </ng-template>
