@@ -1,7 +1,6 @@
 import { IPhoto } from './../../interfaces/Photo';
 import { Component, OnInit } from '@angular/core';
 import { PhotoService } from 'src/app/services/photo.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-photo-list',
@@ -13,8 +12,7 @@ export class PhotoListComponent implements OnInit {
   photos: IPhoto[];
 
   constructor(
-    private photoService: PhotoService,
-    private router: Router
+    private photoService: PhotoService
   ) { }
 
   ngOnInit() {
