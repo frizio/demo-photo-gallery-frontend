@@ -4,4 +4,3 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## [tutorial Video](https://www.youtube.com/watch?v=4MEsROoq5Qw)
 
-### 51.34
