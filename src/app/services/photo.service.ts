@@ -36,4 +36,8 @@ export class PhotoService {
     return this.http.delete(this.URI + id);
   }
 
+  updatePhoto(id: string, title: string, description: string) {
+    return this.http.put(`${this.URI}${id}`, {title, description});
+  }
+
 }
