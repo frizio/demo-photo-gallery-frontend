@@ -32,4 +32,8 @@ export class PhotoService {
     return this.http.get<IPhoto>(this.URI + id);
   }
 
+  deletePhoto(id: string) {
+    return this.http.delete(this.URI + id);
+  }
+
 }
