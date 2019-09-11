@@ -1,4 +1,7 @@
+import { IPhoto } from './../../interfaces/Photo';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { PhotoService } from 'src/app/services/photo.service';
 
 @Component({
   selector: 'app-photo-preview',
@@ -7,9 +10,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotoPreviewComponent implements OnInit {
 
-  constructor() { }
+  photoId: string;
+  photo: IPhoto;
+
+  constructor(
+    private router: Router,
+    private activateRoute: ActivatedRoute,
+    private photoService: PhotoService
+  ) { }
 
   ngOnInit() {
+
+    this.activateRoute.params.subscribe(
+      params => {
+        this.photoId = params.id;
+        this.photoService.getPhoto(this.photoId).subscribe(
+          res => {
+            this.photo = res;
+          },
+          err => {
+            console.log(err);
+          }
+        );
+      }
+    );
+
   }
 
 }

@@ -1,1 +1,13 @@
-<p>photo-preview works!</p>
+<div class="row" *ngIf="!photo; else main_content">
+    <h1>Loading foto...</h1>
+</div>
+
+<ng-template #main_content>
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <img [src]="'http://localhost:4000/' + photo.imagePath" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</ng-template>

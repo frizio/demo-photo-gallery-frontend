@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class PhotoService {
 
-  URI = 'http://localhost:4000/api/photos';
+  URI = 'http://localhost:4000/api/photos/';
 
   constructor(
     private http: HttpClient
@@ -26,6 +26,10 @@ export class PhotoService {
 
   getPhotos(): Observable<IPhoto[]> {
     return this.http.get<IPhoto[]>(this.URI);
+  }
+
+  getPhoto(id: string): Observable<IPhoto> {
+    return this.http.get<IPhoto>(this.URI + id);
   }
 
 }
