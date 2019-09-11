@@ -1,4 +1,7 @@
+import { IPhoto } from './../../interfaces/Photo';
 import { Component, OnInit } from '@angular/core';
+import { PhotoService } from 'src/app/services/photo.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-photo-list',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotoListComponent implements OnInit {
 
-  constructor() { }
+  photos: IPhoto[];
+
+  constructor(
+    private photoService: PhotoService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.photoService.getPhotos().subscribe(
+      res => {
+        this.photos = res;
+      },
+      err => {
+        console.log(err);
+      }
+    );
+
   }
 
 }

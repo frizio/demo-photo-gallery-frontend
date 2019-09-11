@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { IPhoto } from '../interfaces/Photo';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -20,6 +22,10 @@ export class PhotoService {
     formData.append('description', description);
     formData.append('image', photo);
     return this.http.post(this.URI, formData);
+  }
+
+  getPhotos(): Observable<IPhoto[]> {
+    return this.http.get<IPhoto[]>(this.URI);
   }
 
 }
